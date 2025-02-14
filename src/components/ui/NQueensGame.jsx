@@ -135,21 +135,20 @@ const EnhancedNQueensGame = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-      <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-4xl">
-        <h1 className="text-3xl font-bold text-center mb-6">N-Queens Game</h1>
-        
-        <div className="flex flex-wrap justify-center gap-4 mb-4">
-          <select 
-            value={boardSize}
-            onChange={(e) => setBoardSize(Number(e.target.value))}
-            className="px-4 py-2 border rounded bg-white hover:bg-gray-50"
-          >
-            <option value={4}>4 x 4</option>
-            <option value={6}>6 x 6</option>
-            <option value={8}>8 x 8</option>
-          </select>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-6">
+  <div className="bg-white rounded-lg shadow-2xl p-8 w-full max-w-5xl mx-auto">
+    <h1 className="text-4xl font-bold text-center text-gray-900 mb-6">N-Queens Game</h1>
 
+    <div className="flex flex-wrap justify-center gap-4 mb-6">
+      <select
+        value={boardSize}
+        onChange={(e) => setBoardSize(Number(e.target.value))}
+        className="px-5 py-3 text-lg border rounded-lg bg-yellow-100 hover:bg-yellow-200 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all"
+      >
+        <option value={4}>4 x 4</option>
+        <option value={6}>6 x 6</option>
+        <option value={8}>8 x 8</option>
+      </select>
           <button 
             onClick={() => {
               setShowInstructions(!showInstructions);
@@ -191,31 +190,31 @@ const EnhancedNQueensGame = () => {
         </div>
 
         {showInstructions && (
-          <div className="mb-4 p-4 bg-blue-50 rounded">
+          <div className="mb-4 p-5 bg-blue-100 text-gray-800 rounded-lg shadow-md">
             {instructionMode === 'rules' ? (
               <>
-                <h2 className="font-bold mb-2">How to Play:</h2>
-                <ul className="list-disc pl-5 space-y-1">
+                <h2 className="font-bold mb-3 text-lg text-blue-700">How to Play:</h2>
+                <ul className="list-disc pl-6 space-y-2 marker:text-blue-500">
                   <li>Place exactly {boardSize} queens on the board</li>
                   <li>No two queens can attack each other</li>
                   <li>Queens can move horizontally, vertically, and diagonally</li>
-                  <li>Red highlights show conflicting positions</li>
+                  <li className="text-red-500 font-semibold">Red highlights show conflicting positions</li>
                   <li>Click a square to place or remove a queen</li>
                   <li>You have {attempts} attempts remaining</li>
                 </ul>
               </>
             ) : (
               <>
-                <h2 className="font-bold mb-2">N-Queens Problem Explained</h2>
-                <p className="mb-2">
+                <h2 className="font-bold mb-3 text-lg text-blue-700">N-Queens Problem Explained</h2>
+                <p className="mb-3 leading-relaxed">
                   The N-Queens problem is a classic algorithmic challenge of placing N queens on an N×N chessboard so that no two queens threaten each other.
                 </p>
-                <ul className="list-disc pl-5 space-y-1">
+                <ul className="list-disc pl-6 space-y-2 marker:text-blue-500">
                   <li>Queens can attack horizontally, vertically, and diagonally</li>
                   <li>No two queens can share the same row, column, or diagonal</li>
-                  <li>Requires backtracking algorithm to find solutions</li>
+                  <li className="font-semibold">Requires backtracking algorithm to find solutions</li>
                   <li>Complexity increases exponentially with board size</li>
-                  <li>Total solutions vary: 2 for 4x4, 92 for 8x8 board</li>
+                  <li className="font-bold text-blue-600">Total solutions vary: 2 for 4x4, 92 for 8x8 board</li>
                 </ul>
               </>
             )}
@@ -223,8 +222,8 @@ const EnhancedNQueensGame = () => {
         )}
 
         {/* Game Board with Fixed Sizing */}
-        <div className="flex justify-center mb-4">
-          <div className="w-[480px] h-[480px] max-w-full aspect-square">
+        <div className="flex justify-center w-full">
+          <div className="w-[480px] h-[480px] max-w-full aspect-square mx-auto">
             <div 
               className="grid h-full w-full"
               style={{ 

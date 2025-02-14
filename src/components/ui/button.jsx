@@ -35,10 +35,7 @@ const Button = React.forwardRef(({ className, variant, size, ...props }, ref) =>
 Button.displayName = "Button"
 
 export { Button, buttonVariants }
-```
 
-10. Create utils file `src/lib/utils.js`:
-```javascript
 import { clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
  

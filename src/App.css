@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.list-disc pl-5 space-y-1
+{
+  color: black;
+}
