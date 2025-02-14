@@ -143,7 +143,7 @@ const EnhancedNQueensGame = () => {
       <select
         value={boardSize}
         onChange={(e) => setBoardSize(Number(e.target.value))}
-        className="px-5 py-3 text-lg border rounded-lg bg-yellow-100 hover:bg-yellow-200 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all"
+        className="px-5 py-3 text-lg border rounded-lg bg-yellow-200 hover:bg-yellow-200 text-black focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all"
       >
         <option value={4}>4 x 4</option>
         <option value={6}>6 x 6</option>
@@ -240,6 +240,7 @@ const EnhancedNQueensGame = () => {
                       selectedSquare?.row === i && selectedSquare?.col === j ? 'bg-yellow-200 hover:bg-yellow-300' :
                       (i + j) % 2 === 0 ? 'bg-blue-200 hover:bg-blue-300' : 'bg-green-200 hover:bg-green-300'}
                       transition-colors`}
+                      style={{ width: `${480 / boardSize}px`, height: `${480 / boardSize}px` }}
                     onClick={() => handleSquareClick(i, j)}
                     onMouseEnter={() => setSelectedSquare({ row: i, col: j })}
                     onMouseLeave={() => setSelectedSquare(null)}
@@ -247,7 +248,7 @@ const EnhancedNQueensGame = () => {
                   >
                     {hasQueen && (
                       <Crown 
-                        className={`w-8 h-8 ${conflicts[i][j] ? 'text-red-600' : 'text-purple-700'}`}
+                        className={`w-6 h-6 ${conflicts[i][j] ? 'text-red-600' : 'text-purple-700'}`}
                       />
                     )}
                   </button>
