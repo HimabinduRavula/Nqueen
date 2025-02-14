@@ -294,9 +294,9 @@ const EnhancedNQueensGame = () => {
           </div>
         )}
 
-        <div className="text-center space-y-2 mt-4">
-          <p className="text-lg font-semibold">
-            Attempts left: <span className={attempts <= 3 ? 'text-red-500' : ''}>{attempts}</span>
+        <div className="bg-yellow-200 p-2 text-center space-y-2 mt-4">
+          <p className="text-lg text-black  font-semibold">
+            Attempts left: <span className={attempts <= 10 ? 'text-red-500' : ''}>{attempts}</span>
           </p>
           {message && (
             <p className={`text-lg font-medium ${gameWon ? 'text-green-600' : 'text-blue-600'}`}>
